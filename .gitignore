@@ -1,0 +1,4 @@
+*.o
+bk7231n_tm1650_drive_control_digital_tube_demo/output
+bk7231n_tm1650_drive_control_digital_tube_demo/.vscode
+
