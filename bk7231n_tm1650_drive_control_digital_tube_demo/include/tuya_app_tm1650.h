@@ -10,8 +10,8 @@
  * @LastEditTime: 2021-05-10 16:50:14
  */
 
-#ifndef __APP_TM1650_H__
-#define __APP_TM1650_H__
+#ifndef __TUYA_APP_TM1650_H__
+#define __TUYA_APP_TM1650_H__
 
 #include "uni_log.h"
 #include "tuya_cloud_error_code.h"

@@ -9,7 +9,12 @@
  * @LastEditors: xjw
  * @LastEditTime: 2021-05-10 15:21:28
  */
-#include "tm1650.h"
+#include "tuya_tm1650.h"
+
+
+
+
+
 typedef struct {
     tuya_i2c_t    *i2c;
 } tm1650_dev_t;

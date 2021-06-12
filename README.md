@@ -33,15 +33,15 @@ This Demo is based on Tuya Smart Cloud Platform, Tuya Smart APP, IoTOS Embeded W
 ```
 ├── src	
 |    ├── app_driver
-|    |    └── tm1650.c            //TM1650 module driver related
+|    |    └── tuya_tm1650.c            //TM1650 module driver related
 |    ├── tuya_device.c             //application layer entry file
-|    └── app_tm1650.c            //primary application layer
+|    └── tuya_app_tm1650.c            //primary application layer
 |
 ├── include				//header directory
 |    ├── app_driver
-|    |    └──tm1650.h
+|    |    └──tuya_tm1650.h
 |    ├── tuya_device.h
-|    └── app_tm1650.h
+|    └── tuya_app_tm1650.h
 |
 └── output              //compile the product
 ```

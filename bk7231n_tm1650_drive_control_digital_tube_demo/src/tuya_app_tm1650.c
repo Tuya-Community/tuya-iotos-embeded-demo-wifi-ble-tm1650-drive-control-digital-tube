@@ -15,9 +15,11 @@
 #include "tuya_hal_system.h"
 #include "uni_thread.h"
 /* Private includes ----------------------------------------------------------*/
-#include "tm1650.h"
-#include "app_tm1650.h"
+#include "tuya_tm1650.h"
+#include "tuya_app_tm1650.h"
 
+
+#define DP_CNT 4
 /* Private variables ---------------------------------------------------------*/
 DP_VALUE_T displaynum1_s = {
     .dp_id = DP_NUM1,
@@ -91,16 +93,14 @@ VOID app_report_all_dp_status(VOID)
 {
     OPERATE_RET op_ret = OPRT_OK;
 
-    INT_T dp_cnt = 0;
-    dp_cnt = 4;
 
-    TY_OBJ_DP_S *dp_arr = (TY_OBJ_DP_S *)Malloc(dp_cnt*SIZEOF(TY_OBJ_DP_S));
+    TY_OBJ_DP_S *dp_arr = (TY_OBJ_DP_S *)Malloc(DP_CNT*SIZEOF(TY_OBJ_DP_S));
     if(NULL == dp_arr) {
         PR_ERR("malloc failed");
         return;
     }
 
-    memset(dp_arr, 0, dp_cnt*SIZEOF(TY_OBJ_DP_S));
+    memset(dp_arr, 0, DP_CNT*SIZEOF(TY_OBJ_DP_S));
 
     dp_arr[0].dpid = displaynum1_s.dp_id;
     dp_arr[0].type = PROP_VALUE;
@@ -122,7 +122,7 @@ VOID app_report_all_dp_status(VOID)
     dp_arr[3].time_stamp = 0;
     dp_arr[3].value.dp_value = displaynum3_s.value;
 
-    op_ret = dev_report_dp_json_async(NULL,dp_arr,dp_cnt);
+    op_ret = dev_report_dp_json_async(NULL,dp_arr,DP_CNT);
     Free(dp_arr);
     if(OPRT_OK != op_ret) {
         PR_ERR("dev_report_dp_json_async relay_config data error,err_num",op_ret);

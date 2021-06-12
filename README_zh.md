@@ -32,15 +32,15 @@
 ```
 ├── src	
 |    ├── app_driver
-|    |    └── tm1650.c            //tm1650模块的驱动相关
+|    |    └── tuya_tm1650.c            //tm1650模块的驱动相关
 |    ├── tuya_device.c             //应用层入口文件
-|    └── app_tm1650.c            //主要应用层
+|    └── tuya_app_tm1650.c            //主要应用层
 |
 ├── include				//头文件目录
 |    ├── app_driver
-|    |    └──tm1650.h
+|    |    └──tuya_tm1650.h
 |    ├── tuya_device.h
-|    └── app_tm1650.h
+|    └── tuya_app_tm1650.h
 |
 └── output              //编译产物
 ```
